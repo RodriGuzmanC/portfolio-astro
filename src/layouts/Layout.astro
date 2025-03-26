@@ -1,0 +1,141 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header></Header>
+		<slot />
+		<Footer></Footer>
+	</body>
+</html>
+<style is:global>
+  	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--color-blue: #00FFFF;
+		--color-white: #F0F0F0;
+		--color-slate: #aabbed;
+		--bg-dark: #0A182E;
+		--bg-blue-transparent: #00ffff10;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: 'Montserrat', sans-serif;
+		background: var(--bg-dark);
+		background-size: 224px;
+		color-scheme: light dark;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	.btn-primary, .btn-secondary {
+		border-radius: 5px;
+		padding: 1.25rem 1.75rem;
+		font-size: 14px;
+		line-height: 1;
+		text-decoration: none;
+		margin-top: 50px;
+		font-weight: 700;
+		width: fit-content;
+	}
+	.btn-primary{
+		color: var(--bg-dark);
+		background-color: var(--color-blue);
+		border: 1px solid var(--color-blue);
+		transition: all 0.3s ease;
+	}
+	.btn-primary:hover{
+		color: var(--color-blue);
+		background-color: transparent;
+	}
+	.btn-secondary{
+		color: var(--color-blue);
+		background-color: var(--bg-dark);
+		border: 1px solid var(--color-blue);
+		transition: all 0.3s ease;
+	}
+	.btn-secondary:hover{
+		color: var(--bg-dark);
+		background-color: var(--color-blue);
+	}
+	.color-blue{
+		color: var(--color-blue);
+	}
+	.color-slate{
+		color: var(--color-slate);
+	}
+	.color-white{
+		color: var(--color-white);
+	}
+	/* FUENTES */
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+	}
+	p{
+		color: var(--color-slate);
+		font-size: 1.2rem;
+	}
+	.big-heading{
+		font-size: 3rem;
+		color: var(--color-white);
+	}
+	.t-title{
+		font-size: 3.75rem;
+	}
+	.t-subtitle{
+		font-size: 1.5rem;
+	}
+	.t-body{
+		font-size: 1.2rem;
+	}
+
+	@media(max-width: 768px){
+		h1{
+			font-size: 2rem;
+		}
+		.t-title{
+			font-size: 2rem;
+		}
+		.t-subtitle{
+			font-size: 1.75rem;
+		}
+		.t-body{
+			font-size: 1rem;
+		}
+	}
+	
+</style>

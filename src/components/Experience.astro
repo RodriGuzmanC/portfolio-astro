@@ -1,0 +1,131 @@
+---
+
+---
+
+<section class="flex justify-center">
+    <div class="container">
+        <h2 class="t-subtitle color-blue pb-4">Experiencia</h2>
+        <p class="t-body color-slate">Mi trayectoria profesional abarca diversos roles en los que he adquirido experiencia en la industria tecnológica. He tenido la oportunidad de trabajar para empresas de mi país como desarrollador de software donde lideré proyectos exitosos, haciendo uso de tecnologías como Wordpress, Php, NextJS y React. Mi habilidad para crear soluciones escalables y mi enfoque en el aprendizaje constante a lo largo de cada proyecto han sido fundamentales en mi desarrollo profesional.</p>
+
+        <!-- Tarjeta de Experiencia -->
+        <div class="experience-card">
+            <div class="experience-logo">
+                <img src="tresmedia-logo.png" alt="Logo de la empresa" />
+            </div>
+            <div class="experience-details">
+                <h3 class="company-name">Tresmedia E.I.R.L</h3>
+                <p class="duration">Enero 2023 - Diciembre 2024</p>
+                <ul class="activities">
+                    <li>Desarrollo de soluciones web escalables</li>
+                    <li>Liderazgo en proyectos de desarrollo con NextJS y React</li>
+                    <li>Colaboración en el mantenimiento de sistemas en producción</li>
+                </ul>
+                <a href="https://www.tres.pe/" target="_blank" class="experience-link">Visitar Web</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    /* Estilo para la tarjeta de experiencia */
+.experience-card {
+    background-color: var(--bg-blue-transparent);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem; /* Reducimos un poco el padding para no dejar tanto espacio */
+    margin-top: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+}
+
+.experience-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Para alinear el logo verticalmente */
+}
+
+.experience-logo img {
+    width: auto;
+    height: 50px; /* Ajustamos el alto para que el logo no sea tan grande y no genere espacio vacío */
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Hace que el logo oscuro tenga más contraste */
+}
+
+.experience-details {
+    flex: 1;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.company-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.duration {
+    font-size: 1.2rem;
+    color: var(--color-slate);
+    margin-bottom: 1rem;
+}
+
+.activities {
+    color: var(--color-slate);
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.activities li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-link {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    text-decoration: none;
+    border: 1px solid var(--color-blue);
+    width: fit-content;
+    padding: 0.5rem 1.25rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experience-link:hover {
+    background-color: var(--color-blue);
+    color: var(--bg-dark);
+}
+
+@media(max-width: 768px) {
+    .experience-card {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .experience-logo {
+        margin-bottom: 1rem;
+    }
+
+    .experience-details {
+        margin-left: 0;
+    }
+}
+
+</style>
