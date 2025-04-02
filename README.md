@@ -6,13 +6,13 @@
 
 Puedes visitar mi portafolio en el siguiente enlace:  
 
-➡️ [Mi Portafolio](https://enlace-aqui.com)  
+➡️ [Mi Portafolio](https://rodriguzmanc.github.io/portfolio-astro/)  
 
 ## 🖼 Captura de pantalla  
 
 A continuación, una vista previa de la pantalla inicial de mi portafolio:  
 
-![Captura de pantalla](readme-portfolio.png)  
+![Captura de pantalla](https://rodriguzmanc.github.io/portfolio-astro/readme-portfolio.png)  
 
 ## 🚀 Tecnologías utilizadas  
 
@@ -28,8 +28,7 @@ A continuación, una vista previa de la pantalla inicial de mi portafolio:
 
 Si deseas ponerte en contacto conmigo, puedes encontrarme en:  
 
-- 📧 Correo: [tu-email@example.com]  
-- 💼 LinkedIn: [linkedin.com/in/tuusuario]  
-- 🐦 Twitter: [twitter.com/tuusuario]  
+- 📧 Correo: [[Mi correo](mailto:eduis.carranza123@gmail.com)]  
+- 💼 LinkedIn: [[Rodrigo Guzman](https://www.linkedin.com/in/eduis-rodrigo-guzman-carranza-3a2111260/)]  
 
 ¡Gracias por visitar mi portafolio! 😊  
