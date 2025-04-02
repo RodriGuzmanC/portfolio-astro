@@ -1,12 +1,12 @@
 ---
 import Card from "./Card.astro";
 import projects from "../data/projects";
-import ProjectCard from "./ProjectCard";
+import Subtitle from "./Subtitle.astro";
 ---
 
 <div class="container">
   <div role="list" class="link-card-grid">
-    <h2 class="color-blue t-subtitle pb-4">Proyectos Personales</h2>
+    <Subtitle title="Proyectos en los que he participado"></Subtitle>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {
         projects.map((project) => (
@@ -28,35 +28,7 @@ import ProjectCard from "./ProjectCard";
 </div>
 
 <style>
-	.mapa{
-		display: none;
-		grid-template-columns: repeat(5, 90px); /* Dos columnas de 120px cada una */
-		grid-template-rows: repeat(3, 90px); /* Dos filas de 120px cada una */
-		gap: 0;
-		overflow: hidden; /* Oculta el sobrante de las columnas */
-		position: absolute;
-		top: -45px;
-		left: -45px;
-		height: 55%;
-		z-index: -1;
-	}
-	.mapa::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 30px; /* Altura del degradado difuminado */
-		background: linear-gradient(to bottom, rgba(204, 204, 204, 0), #0a182e) /* Degradado de difuminado */
-}
-	.cuadrado{
-		background-color: #ccc; /* Color de fondo de los cuadrados */
-		border: 1px solid #ffffff11;
-		background-color: transparent;
-	}
-	.cuadrado:nth-child(2){
-		background-color: var(--bg-blue-transparent);
-	}
+	
 	h2 {
 		margin: 0;
 		font-size: 1.25rem;

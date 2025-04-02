@@ -1,0 +1,91 @@
+---
+import { Smartphone, Code, Cloud, LaptopMinimal } from 'lucide-react';
+import Subtitle from './Subtitle.astro';
+
+---
+
+<section class="habilidades" id="habilidades">
+    <Subtitle title='Habilidades'></Subtitle>
+    <div class="contenedor-habilidades grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="habilidad">
+            <Smartphone className='w-8 h-auto mb-6 mt-2'/>
+            <h3>Desarrollo de apps móviles</h3>
+            <p>Desarrollo de aplicaciones para Android con experiencia de usuario optimizada.</p>
+        </div>
+        <div class="habilidad">
+            <Code className='w-8 h-auto mb-6 mt-2'/>
+            <h3>Creación de APIs RESTful</h3>
+            <p>Diseño e implementación de APIs RESTful escalables y seguras para aplicaciones modernas.</p>
+        </div>
+        <div class="habilidad">
+            <Cloud className='w-8 h-auto mb-6 mt-2'/>
+            <h3>Integración de servicios en la nube</h3>
+            <p>Implementación y configuración de servicios en la nube para optimizar el rendimiento y la escalabilidad.</p>
+        </div>
+        <div class="habilidad">
+            <LaptopMinimal className='w-8 h-auto mb-6 mt-2' />
+            <h3>Desarrollo web</h3>
+            <p>Creación de sitios web responsivos y aplicaciones web con tecnologías modernas.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+
+.habilidades {
+    padding: 50px 20px;
+}
+
+.habilidades h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.contenedor-habilidades {
+}
+
+.habilidad {
+    background: rgba(255, 255, 255, 0.1); /* Transparencia */
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto de elevación */
+.habilidad:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos */
+.habilidad i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    display: block;
+    color: #64ffda; /* Verde neón */
+}
+
+.habilidad h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.habilidad p {
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-habilidades {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>

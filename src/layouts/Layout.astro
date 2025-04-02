@@ -1,6 +1,6 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
 	title: string;
@@ -20,21 +20,22 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header></Header>
+		<Header />
 		<slot />
-		<Footer></Footer>
+		<Footer />
 	</body>
 </html>
 <style is:global>
-  	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
-		--color-blue: #00FFFF;
-		--color-white: #F0F0F0;
+		--color-blue: #00ffff;
+		--color-white: #f0f0f0;
 		--color-slate: #aabbed;
-		--bg-dark: #0A182E;
+		--custom-bg-slate: rgba(255, 255, 255, 0.1);
+		--bg-dark: #0a182e;
 		--bg-blue-transparent: #00ffff10;
 		--accent-gradient: linear-gradient(
 			45deg,
@@ -44,10 +45,24 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: 'Montserrat', sans-serif;
+		font-family: "Montserrat", sans-serif;
 		background: var(--bg-dark);
 		background-size: 224px;
 		color-scheme: light dark;
+	}
+
+	*::-webkit-scrollbar {
+		width: 12px; /* width of the entire scrollbar */
+	}
+
+	*::-webkit-scrollbar-track {
+		background: #0B182F; /* color of the tracking area */
+		border-radius: 20px;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: var(--color-blue); /* color of the scroll thumb */
+		border-radius: 20px; /* roundness of the scroll thumb */
+		border: 3px solid #0B182F; /* creates padding around scroll thumb */
 	}
 	code {
 		font-family:
@@ -60,7 +75,8 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
-	.btn-primary, .btn-secondary {
+	.btn-primary,
+	.btn-secondary {
 		border-radius: 5px;
 		padding: 1.25rem 1.75rem;
 		font-size: 14px;
@@ -70,33 +86,33 @@ const { title } = Astro.props;
 		font-weight: 700;
 		width: fit-content;
 	}
-	.btn-primary{
+	.btn-primary {
 		color: var(--bg-dark);
 		background-color: var(--color-blue);
 		border: 1px solid var(--color-blue);
 		transition: all 0.3s ease;
 	}
-	.btn-primary:hover{
+	.btn-primary:hover {
 		color: var(--color-blue);
 		background-color: transparent;
 	}
-	.btn-secondary{
+	.btn-secondary {
 		color: var(--color-blue);
 		background-color: var(--bg-dark);
 		border: 1px solid var(--color-blue);
 		transition: all 0.3s ease;
 	}
-	.btn-secondary:hover{
+	.btn-secondary:hover {
 		color: var(--bg-dark);
 		background-color: var(--color-blue);
 	}
-	.color-blue{
+	.color-blue {
 		color: var(--color-blue);
 	}
-	.color-slate{
+	.color-slate {
 		color: var(--color-slate);
 	}
-	.color-white{
+	.color-white {
 		color: var(--color-white);
 	}
 	/* FUENTES */
@@ -105,37 +121,34 @@ const { title } = Astro.props;
 		font-weight: 700;
 		line-height: 1;
 	}
-	p{
-		color: var(--color-slate);
+	p {
 		font-size: 1.2rem;
 	}
-	.big-heading{
+	.big-heading {
 		font-size: 3rem;
-		color: var(--color-white);
 	}
-	.t-title{
+	.t-title {
 		font-size: 3.75rem;
 	}
-	.t-subtitle{
+	.t-subtitle {
 		font-size: 1.5rem;
 	}
-	.t-body{
+	.t-body {
 		font-size: 1.2rem;
 	}
 
-	@media(max-width: 768px){
-		h1{
+	@media (max-width: 768px) {
+		h1 {
 			font-size: 2rem;
 		}
-		.t-title{
+		.t-title {
 			font-size: 2rem;
 		}
-		.t-subtitle{
+		.t-subtitle {
 			font-size: 1.75rem;
 		}
-		.t-body{
+		.t-body {
 			font-size: 1rem;
 		}
 	}
-	
 </style>

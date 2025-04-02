@@ -1,0 +1,25 @@
+---
+import personalProjects from "../data/personalProjects";
+import Card from "./Card.astro";
+import Subtitle from "./Subtitle.astro";
+---
+
+<div class="mt-10">
+    <Subtitle title="Proyectos personales"></Subtitle>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {
+            personalProjects.map((project) => (
+                <div>
+                    <Card
+                        href={project.link}
+                        title={project.title}
+                        body={project.description}
+                        technologies={project.tecnnologies}
+                        image={project.image}
+                        details={project.details}
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>

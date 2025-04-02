@@ -1,6 +1,5 @@
 ---
-import Eje from "./Eje";
-import ProjectCard from "./ProjectCard";
+import CardModal from "./CardModal";
 
 interface Props {
 	title: string;
@@ -15,7 +14,7 @@ const { href, title, body, technologies, image, details } = Astro.props;
 ---
 
 <div class="link-card relative">
-	<Eje
+	<CardModal
 		title={title}
 		body={body}
 		technologies={technologies}
@@ -43,54 +42,42 @@ const { href, title, body, technologies, image, details } = Astro.props;
 					))
 				}
 			</div>
+			<div class="underline"></div>
 		</div>
-	</Eje>
+	</CardModal>
 </div>
 
 <style>
+	/** ESTILO DE LA LINEA ANIMADA */
+
+
+	.underline {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(to right, #00bcd4, #2196f3);
+		transform: scaleX(0);
+		transform-origin: bottom right;
+		transition: transform 0.3s ease;
+	}
+
+	.link-card:hover .underline {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+
+	/* ESTILOS DE LA TARJETA */
 	.t-body {
 		display: -webkit-box;
 		-webkit-line-clamp: 4; /* Limita a 4 líneas */
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+		font-size: 16px;
+		color: #fff;
 	}
 
-	.mapa {
-		display: none;
-		grid-template-columns: repeat(
-			5,
-			90px
-		); /* Dos columnas de 120px cada una */
-		grid-template-rows: repeat(3, 90px); /* Dos filas de 120px cada una */
-		gap: 0;
-		overflow: hidden; /* Oculta el sobrante de las columnas */
-		position: absolute;
-		top: -45px;
-		left: -45px;
-		height: 55%;
-		z-index: -1;
-	}
-	.mapa::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 30px; /* Altura del degradado difuminado */
-		background: linear-gradient(
-			to bottom,
-			rgba(204, 204, 204, 0),
-			#0a182e
-		); /* Degradado de difuminado */
-	}
-	.cuadrado {
-		background-color: #ccc; /* Color de fondo de los cuadrados */
-		border: 1px solid #ffffff11;
-		background-color: transparent;
-	}
-	.cuadrado:nth-child(2) {
-		background-color: var(--bg-blue-transparent);
-	}
 	h2 {
 		margin: 0;
 		font-size: 1.25rem;
@@ -108,7 +95,7 @@ const { href, title, body, technologies, image, details } = Astro.props;
 		transition: all 0.5s ease-out;
 		cursor: pointer;
 		overflow: hidden;
-		border: 1px solid #ffffff1e;
+		background-color: var(--custom-bg-slate);
 	}
 	.link-card a {
 		height: 100%;
@@ -118,18 +105,12 @@ const { href, title, body, technologies, image, details } = Astro.props;
 		display: flex;
 		z-index: 50;
 	}
-	.link-card:hover {
-		border: 1px solid #ffffff2c;
-	}
-	.link-card:hover .mapa {
-		display: grid;
-	}
 
 	.capsule {
 		background-color: #00ffff33;
 		color: var(--color-blue);
 		padding: 0.3rem 0.5rem;
-		font-size: 1rem;
+		font-size: 14px;
 		border-radius: 7px;
 		display: flex;
 		justify-content: center;
